@@ -1,0 +1,23 @@
+//this is a problem of shrinking window pattern but we can also solve this problem using binary please check it later while revision
+class Solution {
+public:
+    vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+          
+          int i=0;
+          int j=arr.size()-1;
+
+          while((j-i+1)>k)
+          {
+            if(abs(arr[i]-x)>abs(arr[j]-x))
+            {
+                i++;
+            }
+            else
+            {
+                j--;
+            }
+          }
+
+          return vector<int>(arr.begin()+i,arr.begin()+j+1);
+    }
+};
